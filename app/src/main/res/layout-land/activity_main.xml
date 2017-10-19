@@ -10,7 +10,16 @@
     <com.example.afentanes.customlists.CustomLists
         android:id="@+id/customListId"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        custom:labelTitle="title from attrs" />
+        android:layout_height="wrap_content"
+        android:layout_weight="70"
+        custom:labelTitle="@string/title" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:text="Get more cats" />
+
 
 </LinearLayout>

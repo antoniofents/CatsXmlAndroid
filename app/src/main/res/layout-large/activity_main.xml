@@ -4,13 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/main_land_layout"
     tools:context=".MainActivity">
-    <TextView
-        android:layout_width="wrap_content"
+
+    <com.example.afentanes.customlists.CustomLists
+        android:id="@+id/customListId"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="not available, sorry"
-        android:textSize="40dp"
-        android:id="@+id/list_title"/>
+
+        custom:labelTitle="@string/title" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get more cats" />
+
+
 
 </LinearLayout>

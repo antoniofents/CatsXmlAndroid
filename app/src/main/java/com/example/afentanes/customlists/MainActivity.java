@@ -27,7 +27,10 @@ public class MainActivity extends Activity {
         //if portrait layout we will instantiate custom List dinamically,
         //in landscape mode the CustomList view is added in the template
         if(mainLayout!=null){
-            mainLayout.addView(new CustomLists(this, "title from class"));
+            CustomLists customList = new CustomLists(this,getString(R.string.title));
+            customList.setId(R.id.customListId);
+            customList.setWeightSum(70);
+            mainLayout.addView(customList,0);
         }
 
     }
@@ -41,7 +44,7 @@ public class MainActivity extends Activity {
               mainLayout = (LinearLayout) this.findViewById(R.id.main_land_layout);
         }
 
-        LinearLayout linearLayout = (LinearLayout) mainLayout.getChildAt(0);
+        LinearLayout linearLayout = (LinearLayout) mainLayout.findViewById(R.id.customListId);
         if(cats.isEmpty()){
             ListView cats = linearLayout.findViewById(R.id.list_rows);
             cats.getItemAtPosition(0);

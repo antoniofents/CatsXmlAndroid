@@ -26,7 +26,7 @@ public class ReadCatImagesTask extends AsyncTask<CatInfo, Void, Bitmap> {
         imageView.setImageBitmap(bitmap);
     }
 
-    //get the image to decode 
+    //get the image to decode
     @Override
     protected Bitmap doInBackground(CatInfo... catInfos) {
         try {
