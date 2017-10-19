@@ -15,12 +15,17 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //check if we have previous information stored
         if (savedInstanceState != null) {
             cats=savedInstanceState.getParcelableArrayList(CATS_KEY);
         }
         setContentView(R.layout.activity_main);
+
+        //check if we have portrait layout
         LinearLayout mainLayout= this.findViewById(R.id.main_layout);
 
+        //if portrait layout we will instantiate custom List dinamically,
+        //in landscape mode the CustomList view is added in the template
         if(mainLayout!=null){
             mainLayout.addView(new CustomLists(this, "title from class"));
         }
@@ -29,6 +34,8 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState){
+
+        //check which layout is available, portrait or landscape
         LinearLayout mainLayout= this.findViewById(R.id.main_layout);
         if(mainLayout==null){
               mainLayout = (LinearLayout) this.findViewById(R.id.main_land_layout);

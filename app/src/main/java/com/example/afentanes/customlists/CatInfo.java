@@ -6,8 +6,11 @@ import android.os.Parcelable;
 
 public class CatInfo implements Parcelable {
 
+    //cat image url
     public String url;
+    //cat id
     public String id;
+    //cat addition info source
     public String source;
 
     public CatInfo() {

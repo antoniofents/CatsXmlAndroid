@@ -37,10 +37,12 @@ public class ReadCatsTask  extends AsyncTask<String, Void, List <CatInfo>> {
 
 
 
+    //instantiate XML pull parser with a stream of cats from getCatsInfoStream
      List<CatInfo> getCats(){
         try{
          XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+           //get stream
             InputStream catsInfoStream = getCatsInfoStream();
             parser.setInput(catsInfoStream, null);
             parser.nextTag();
@@ -54,8 +56,8 @@ public class ReadCatsTask  extends AsyncTask<String, Void, List <CatInfo>> {
         return Collections.emptyList();
     }
 
+    //get cats info stream, method separated to make possible unittests
     InputStream getCatsInfoStream(){
-
         HttpURLConnection urlConnection =null;
         try {
             URL url = new URL("http://thecatapi.com/api/images/get?format=xml&results_per_page=6");
@@ -71,7 +73,7 @@ public class ReadCatsTask  extends AsyncTask<String, Void, List <CatInfo>> {
         return null;
 
     }
-
+    //Cat info parsing
     private List<CatInfo> readCatsInfo(XmlPullParser parser) throws XmlPullParserException, IOException {
         List <CatInfo> currentCats= new ArrayList<>();
         try{

@@ -27,6 +27,8 @@ public class CatsAdapter extends ArrayAdapter <CatInfo> {
         CatInfo cat = this.getItem(position);
         nameRow.setText(cat.id);
         descRow.setText(cat.source);
+
+        //get, parse and render the  cat image in a separated thread to avoid stopping the main thread
         new ReadCatImagesTask(customRowView.findViewById(R.id.imageRow)).execute(cat);
 
 

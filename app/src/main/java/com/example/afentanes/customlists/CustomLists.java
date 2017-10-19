@@ -19,11 +19,13 @@ public class CustomLists extends LinearLayout {
 
 
     public CustomLists(Context context, String title) {
+        //this constructor is used when the component is instantiated from a java class
         super(context, null, 0);
         init(context, title);
     }
 
     public CustomLists(Context context, AttributeSet attrs) {
+        //this constructor is called when the custom list is  created by android from a template
         super(context, attrs, 0);
 
         try {
@@ -41,6 +43,7 @@ public class CustomLists extends LinearLayout {
     }
 
 
+    //receiving context and title (title is a string that could be indicated from a class o from  a template)
     private void init(Context context, String titleText) {
         try {
 
@@ -54,15 +57,18 @@ public class CustomLists extends LinearLayout {
 
             ListView listView =  findViewById(R.id.list_rows);
 
-
+            //check if we have a cats list previously initialized
             List <CatInfo> cats = ((MainActivity )getContext()).getCatInfo();
             if(!cats.isEmpty()){
+                //load it from our parent restored instance
                 listView.setAdapter(new CatsAdapter(getContext(), cats.toArray(new CatInfo[cats.size()])));
             }else{
+                //call the xml parser to get some cats
                 new ReadCatsTask() {
 
                     @Override
                     protected void onPostExecute(List<CatInfo> cats) {
+                        //as soon as its  executed, fill the listView with the results
                         try {
                             listView.setAdapter(new CatsAdapter(getContext(), cats.toArray(new CatInfo[cats.size()])));
                         } catch (Exception e) {
@@ -72,7 +78,7 @@ public class CustomLists extends LinearLayout {
                     }
                 }.execute();
             }
-
+            //add the text value received
             TextView title = findViewById(R.id.list_title);
             title.setText(titleText);
 
