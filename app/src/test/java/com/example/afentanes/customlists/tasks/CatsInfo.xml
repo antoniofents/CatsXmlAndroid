@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<response>
+    <data>
+        <images>
+            <image>
+                <url>http://25.media.tumblr.com/tumblr_lr2oxlgkrs1qe5d4so1_1280.jpg</url>
+                <id>apolo</id>
+                <source_url>http://thecatapi.com/?id=3am</source_url>
+            </image>
+            <image>
+                <url>http://24.media.tumblr.com/tumblr_lpmlumEWhQ1qdhrwbo1_500.jpg</url>
+                <id>548</id>
+                <source_url>http://thecatapi.com/?id=548</source_url>
+            </image>
+            <image>
+                <url>http://google.com/gatito.jpg</url>
+                <id>1v2</id>
+                <source_url>http://thecatapi.com/?id=1v2</source_url>
+            </image>
+            <image>
+                <url>http://25.media.tumblr.com/tumblr_m0sfxtYeRh1qdh7feo1_1280.jpg</url>
+                <id>9po</id>
+                <source_url>http://thecatapi.com/?id=9po</source_url>
+            </image>
+            <image>
+                <url>http://24.media.tumblr.com/tumblr_ma7jn6nDVY1r6jd7fo1_500.jpg</url>
+                <id>MjA2NDQzMg</id>
+                <source_url>http://thecatapi.com/?id=MjA2NDQzMg</source_url>
+            </image>
+            <image>
+                <url>http://25.media.tumblr.com/tumblr_m1k5a0Cadd1qejbiro1_500.jpg</url>
+                <id>e4k</id>
+                <source_url>http://google.com/gatito</source_url>
+            </image>
+        </images>
+    </data>
+</response>

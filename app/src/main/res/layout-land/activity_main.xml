@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main_land_layout"
+    tools:context=".MainActivity">
+
+    <com.example.afentanes.customlists.CustomLists
+        android:id="@+id/customListId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:labelTitle="title from attrs" />
+
+</LinearLayout>
