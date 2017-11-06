@@ -1,7 +1,11 @@
 package com.example.afentanes.customlists;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -63,6 +67,7 @@ public class MainActivity extends Activity {
     protected ArrayList <CatInfo> getCatInfo(){
         return cats;
     }
+
 
 
 }

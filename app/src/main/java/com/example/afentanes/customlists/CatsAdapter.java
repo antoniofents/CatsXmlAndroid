@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.afentanes.customlists.tasks.ReadCatImagesTask;
 
 
@@ -28,8 +30,14 @@ public class CatsAdapter extends ArrayAdapter <CatInfo> {
         nameRow.setText(cat.id);
         descRow.setText(cat.source);
 
+
+       // ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
+
+
+         Glide.with(parent.getContext()).load(cat.url).into((ImageView) customRowView.findViewById(R.id.imageRow));
+
         //get, parse and render the  cat image in a separated thread to avoid stopping the main thread
-        new ReadCatImagesTask(customRowView.findViewById(R.id.imageRow)).execute(cat);
+       // new ReadCatImagesTask(customRowView.findViewById(R.id.imageRow)).execute(cat);
 
 
         return customRowView;

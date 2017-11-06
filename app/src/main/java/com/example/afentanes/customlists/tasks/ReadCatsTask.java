@@ -60,7 +60,7 @@ public class ReadCatsTask  extends AsyncTask<String, Void, List <CatInfo>> {
     InputStream getCatsInfoStream(){
         HttpURLConnection urlConnection =null;
         try {
-            URL url = new URL("http://thecatapi.com/api/images/get?format=xml&results_per_page=6");
+            URL url = new URL("http://thecatapi.com/api/images/get?format=xml&results_per_page=20");
             urlConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = urlConnection.getInputStream();
             return inputStream;
