@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/main_layout"
+    android:weightSum="10"
     tools:context=".MainActivity">
 
 
@@ -12,6 +13,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:text="Get more cats" />
 
 </LinearLayout>

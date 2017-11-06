@@ -39,15 +39,16 @@ public class ReadCatsTask  extends AsyncTask<String, Void, List <CatInfo>> {
 
     //instantiate XML pull parser with a stream of cats from getCatsInfoStream
      List<CatInfo> getCats(){
+         InputStream catsInfoStream =null;
         try{
          XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
            //get stream
-            InputStream catsInfoStream = getCatsInfoStream();
+             catsInfoStream = getCatsInfoStream();
             parser.setInput(catsInfoStream, null);
             parser.nextTag();
-            catsInfoStream.close();
-            return readCatsInfo(parser);
+            return readCatsInfo(parser, catsInfoStream);
+
             
         }catch (Exception e) {
             Log.i("Main", "error abriendo stream");
@@ -74,7 +75,7 @@ public class ReadCatsTask  extends AsyncTask<String, Void, List <CatInfo>> {
 
     }
     //Cat info parsing
-    private List<CatInfo> readCatsInfo(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private List<CatInfo> readCatsInfo(XmlPullParser parser , InputStream catsStream) throws XmlPullParserException, IOException {
         List <CatInfo> currentCats= new ArrayList<>();
         try{
 
@@ -99,6 +100,8 @@ public class ReadCatsTask  extends AsyncTask<String, Void, List <CatInfo>> {
         }catch (Exception e) {
             Log.i("Main", "error al parsear un elemento");
         }
+        catsStream.close();
+
         return currentCats;
     }
 

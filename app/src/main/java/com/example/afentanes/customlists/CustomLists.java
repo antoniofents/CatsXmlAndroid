@@ -82,6 +82,7 @@ public class CustomLists extends LinearLayout {
             TextView title = findViewById(R.id.list_title);
             title.setText(titleText);
 
+
         } catch (Exception e) {
 
             Log.i("error", "error parse");

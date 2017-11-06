@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
             CustomLists customList = new CustomLists(this,getString(R.string.title));
             customList.setId(R.id.customListId);
             customList.setWeightSum(70);
+            customList.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 8f));
             mainLayout.addView(customList,0);
         }
 
